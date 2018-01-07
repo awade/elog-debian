@@ -18,7 +18,7 @@ RUN apt-get update -q && \
      elog && \
     apt-get clean
 
-RUN useradd elog -G elog
+#RUN useradd elog -G elog
 
 # Editing tools for interactive mode
 RUN apt-get --yes install \
