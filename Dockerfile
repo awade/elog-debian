@@ -27,7 +27,6 @@ RUN apt-get update -q && \
 RUN apt-get --yes install \
      vim 
 
-
 # For manual build of elog
 #RUN apt-get --yes install \
 #    git clone https://bitbucket.org/ritt/elog --recursive && \
