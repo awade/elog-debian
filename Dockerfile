@@ -8,8 +8,12 @@ WORKDIR /builddir
 # Copy the current directory contents into the container at /app
 ADD . /builddir
 
+
 # Make port 80 available to the world outside this container
 EXPOSE 8080
+
+RUN groupadd elog
+RUN useradd elog -g elog
 
 RUN apt-get update -q && \
     apt-get --yes install \
@@ -18,7 +22,6 @@ RUN apt-get update -q && \
      elog && \
     apt-get clean
 
-#RUN useradd elog -G elog
 
 # Editing tools for interactive mode
 RUN apt-get --yes install \
