@@ -3,17 +3,17 @@ FROM debian:stretch-slim
 MAINTAINER Andrew Wade <awade@ligo.caltech.edu>
 
 # Set the working directory to /app
-WORKDIR /builddir
+WORKDIR /elogmnt
 
 # Copy the current directory contents into the container at /app
-ADD . /builddir
+ADD . /elogmnt
 
 
 # Make port 80 available to the world outside this container
 EXPOSE 8080
 
 RUN groupadd elog
-RUN useradd elog -g elog
+RUN useradd elog -u 1000 -g elog
 
 RUN apt-get update -q && \
     apt-get --yes install \
@@ -35,4 +35,4 @@ RUN apt-get --yes install \
 #    make install
 
 
-CMD ["elogd", "-p", "8080", "-c", "/home/elogd.cfg"]
+#CMD ["elogd", "-p", "8080", "-c", "/elogmnt/elogd.cfg"]
