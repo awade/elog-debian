@@ -35,4 +35,4 @@ RUN apt-get --yes install \
 #    make install
 
 
-#CMD ["elogd", "-p", "8080", "-c", "/elogmnt/elogd.cfg"]
+CMD ["elogd", "-p", "8080", "-c", "/home/elogd.cfg"]
