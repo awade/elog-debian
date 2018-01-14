@@ -13,7 +13,7 @@ ADD . /elogmnt
 EXPOSE 8080
 
 RUN groupadd elog
-RUN useradd elog -u 1000 -g elog
+RUN useradd elog -u 1030 -g elog
 
 RUN apt-get update -q && \
     apt-get --yes install \
